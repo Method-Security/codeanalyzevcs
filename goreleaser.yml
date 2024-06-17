@@ -76,6 +76,8 @@ dockers:
   - image_templates:
       - "ghcr.io/method-security/codeanalyzevcs:{{ .Version }}-amd64"
       - "ghcr.io/method-security/codeanalyzevcs:latest-amd64"
+      - "docker.io/methodsecurity/codeanalyzevcs:{{ .Version }}-amd64"
+      - "docker.io/methodsecurity/codeanalyzevcs:latest-amd64"
     use: buildx
     goos: linux
     goarch: amd64
@@ -95,6 +97,8 @@ dockers:
   - image_templates:
       - "ghcr.io/method-security/codeanalyzevcs:{{ .Version }}-arm64"
       - "ghcr.io/method-security/codeanalyzevcs:latest-arm64"
+      - "docker.io/methodsecurity/codeanalyzevcs:{{ .Version }}-arm64"
+      - "docker.io/methodsecurity/codeanalyzevcs:latest-arm64"
     use: buildx
     goos: linux
     goarch: arm64
@@ -117,6 +121,18 @@ docker_manifests:
     image_templates:
     - 'ghcr.io/method-security/codeanalyzevcs:{{ .Version }}-amd64'
     - 'ghcr.io/method-security/codeanalyzevcs:{{ .Version }}-arm64'
+  - name_template: 'ghcr.io/method-security/codeanalyzevcs:latest'
+    image_templates:
+    - 'ghcr.io/method-security/codeanalyzevcs:{{ .Version }}-amd64'
+    - 'ghcr.io/method-security/codeanalyzevcs:{{ .Version }}-arm64'
+  - name_template: 'methodsecurity/codeanalyzevcs:{{ .Version }}'
+    image_templates:
+    - 'methodsecurity/codeanalyzevcs:{{ .Version }}-amd64'
+    - 'methodsecurity/codeanalyzevcs:{{ .Version }}-arm64'
+  - name_template: 'methodsecurity/codeanalyzevcs:latest'
+    image_templates:
+    - 'methodsecurity/codeanalyzevcs:{{ .Version }}-amd64'
+    - 'methodsecurity/codeanalyzevcs:{{ .Version }}-arm64'
 
 source:
   enabled: true
