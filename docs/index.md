@@ -1,15 +1,12 @@
-<div align="center">
-<h1>codeanalyzevcs</h1>
+# codeanalyzevcs Documentation
 
-[![GitHub Release][release-img]][release]
-[![Verify][verify-img]][verify]
-[![Go Report Card][go-report-img]][go-report]
-[![License: Apache-2.0][license-img]][license]
+Hello and welcome to the codeanalyzevcs documentation. While we always want to provide the most comprehensive documentation possible, we thought you may find the below sections a helpful place to get started.
 
-[![GitHub Downloads][github-downloads-img]][release]
-[![Docker Pulls][docker-pulls-img]][docker-pull]
+- The [Getting Started](./getting-started/basic-usage.md) section provides onboarding material
+- The [Development](./development/setup.md) header is the best place to get started on developing on top of and with codeanalyzevcs
+- See the [Docs](./docs/index.md) section for a comprehensive rundown of codeanalyzevcs capabilities
 
-</div>
+# About codeanalyzevcs
 
 codeanalyzevcs is designed as an orchestration tool that can help security teams kick off Continuous Integration (CI) jobs within their existing Version Control Systems to perform various code analysis capabilities. It is intended to work hand in hand with [codeanalyze](https://github.com/Method-Security/codeanalyze) which is responsible for actually conducting the scans within the CI pipelines.
 
@@ -63,16 +60,3 @@ codeanalyzevcs is a Method Security open source project.
 Learn more about Method's open source source work by checking out our other projects [here](https://github.com/Method-Security) or our organization wide documentation [here](https://method-security.github.io).
 
 Have an idea for a Tool to contribute? Open a Discussion [here](https://github.com/Method-Security/Method-Security.github.io/discussions).
-
-[verify]: https://github.com/Method-Security/codeanalyzevcs/actions/workflows/verify.yml
-[verify-img]: https://github.com/Method-Security/codeanalyzevcs/actions/workflows/verify.yml/badge.svg
-[go-report]: https://goreportcard.com/report/github.com/Method-Security/codeanalyzevcs
-[go-report-img]: https://goreportcard.com/badge/github.com/Method-Security/codeanalyzevcs
-[release]: https://github.com/Method-Security/codeanalyzevcs/releases
-[releases]: https://github.com/Method-Security/codeanalyzevcs/releases/latest
-[release-img]: https://img.shields.io/github/release/Method-Security/codeanalyzevcs.svg?logo=github
-[github-downloads-img]: https://img.shields.io/github/downloads/Method-Security/codeanalyzevcs/total?logo=github
-[docker-pulls-img]: https://img.shields.io/docker/pulls/methodsecurity/codeanalyzevcs?logo=docker&label=docker%20pulls%20%2F%20codeanalyzevcs
-[docker-pull]: https://hub.docker.com/r/methodsecurity/codeanalyzevcs
-[license]: https://github.com/Method-Security/codeanalyzevcs/blob/main/LICENSE
-[license-img]: https://img.shields.io/badge/License-Apache%202.0-blue.svg
