@@ -3,10 +3,12 @@ package cmd
 import (
 	"errors"
 	"strings"
+	"time"
 
 	"github.com/Method-Security/codeanalyzevcs/internal/config"
 	"github.com/Method-Security/pkg/signal"
 	"github.com/Method-Security/pkg/writer"
+	"github.com/palantir/pkg/datetime"
 	"github.com/palantir/witchcraft-go-logging/wlog/svclog/svc1log"
 	"github.com/spf13/cobra"
 )
@@ -53,6 +55,18 @@ func (a *CodeAnalyzeVCS) InitRootCommand() {
 			a.OutputConfig = writer.NewOutputConfig(outputFilePointer, format)
 			cmd.SetContext(svc1log.WithLogger(cmd.Context(), config.InitializeLogging(cmd, &a.RootFlags)))
 			return nil
+		},
+		PersistentPostRunE: func(cmd *cobra.Command, _ []string) error {
+			completedAt := datetime.DateTime(time.Now())
+			a.OutputSignal.CompletedAt = &completedAt
+			return writer.Write(
+				a.OutputSignal.Content,
+				a.OutputConfig,
+				a.OutputSignal.StartedAt,
+				a.OutputSignal.CompletedAt,
+				a.OutputSignal.Status,
+				a.OutputSignal.ErrorMessage,
+			)
 		},
 	}
 
